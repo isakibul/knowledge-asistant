@@ -1,0 +1,18 @@
+  services:
+    db:
+      image: pgvector/pgvector:pg18
+      container_name: rag-postgres
+
+      environment:
+        POSTGRES_USER: user
+        POSTGRES_PASSWORD: password
+        POSTGRES_DB: knowledge-assistant-db
+
+      ports:
+        - "5433:5432"
+
+      volumes:
+        - knowledge_assistant_data:/var/lib/postgresql
+
+  volumes:
+    knowledge_assistant_data:

@@ -1,0 +1,4 @@
+# Runtime dependencies used by the knowledge assistant
+psycopg[binary]==3.3.6
+pypdf==6.19.0
+sentence-transformers==6.1.0
