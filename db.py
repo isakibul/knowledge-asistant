@@ -26,6 +26,9 @@ def insert_chunks(chunks: list[dict]):
                         embedding
                     )
                     VALUES (%s, %s, %s, %s, %s)
+
+                    ON CONFLICT (filename, page, chunk_index)
+                    DO NOTHING
                     """,
                     (
                         chunk["filename"],
